@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 import MealCard from "./MealCard";
      
-
+const URl = "https://www.themealdb.com/api/json/v1/1/search.php?s="
 const Main = () => {
   const [query, setQuery] = useState("");
   const [meal, setMeal] = useState([]);
   
 
   const handleSearch = () => {
-    fetch(`https:www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
+    fetch(URl+query)
       .then((data) => data.json())
       .then((res) => {
         
